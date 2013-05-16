@@ -88,35 +88,14 @@ def main():
     game_map = tank_map['backgroud']
     print type(game_map)
     
-#    print tank_map.get_resource('tank_object')
-#    tank_flag = tank_map['tank_object']
-#    scroller.add(tank_flag, z=0)
-    
-#    print type(game_map),len(game_map.cells)
-#    print len(game_map.cells[0])
-#    for col in game_map.cells:
-#        print col
     scroller.add(game_map, z=0)
     scroller.add(tank_layer, z=1)
-    
-    # set the player start using the player_start token from the tilemap
-    print len(game_map.cells)
-    start = game_map.cells[21]
-    print len(start)
-    start = start[4]
-#    r = tank.get_rect()
-
-    # align the mid bottom of the player with the mid bottom of the start cell
-#    r.midbottom = start.midbottom
-
-    # player image anchor (position) is in the center of the sprite
-#    tank.position = r.center    
     
     # 创建游戏主场景scene
     main_scene = cocos.scene.Scene()
     main_scene.add(scroller)
     
-    # 
+    # 添加键盘处理事件
     keyboard = key.KeyStateHandler()
     director.window.push_handlers(keyboard)
     
