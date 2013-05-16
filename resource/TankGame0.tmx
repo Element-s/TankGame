@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="50" height="50" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="Backgroud" tilewidth="32" tileheight="32" spacing="1" margin="1">
+  <image source="tmw_desert_spacing.png" width="265" height="199"/>
+ </tileset>
+ <tileset firstgid="49" name="up" tilewidth="32" tileheight="32">
+  <image source="up.png" width="32" height="32"/>
+ </tileset>
+ <layer name="backgroud" width="50" height="50">
+  <data encoding="base64" compression="zlib">
+   eJztl8EOgzAMQznvM3ag//+HO00irMFxKYFMtpRDZZf5USTYskhV9NoMyrDe6O95+aO94sAe6sXmxWEzrId6sXlx2AzroV5sPoPjHRxxiIPhiEoc4thnWA/1YvPisBnWQ73YvDhshvVQLzZfmSO6N5ujgrx7cuYM7tAIR/T5z9QdHN7+3rWYLCvvu7gax1lF/it8NYtjdaaiqvaeqSe9B6t8l0TXmRzN6dLbz66v5mib8br09rPrjPOYwRF5F13NgboeeU/gaJ0Z5UDrKueB1uLI4WB6sXlx2AzroV5sXhw2w3qoF5sXh82wHurF5v+FI1ORe1dB+97i+NUHME4kCg==
+  </data>
+ </layer>
+ <layer name="tangup" width="50" height="50" opacity="0.9">
+  <data encoding="base64" compression="zlib">
+   eJztzzENAAAMw7BSGn9ye0dgRyVbCoAkAAAAAAAAAAAANJhTs6+PBfpgASc=
+  </data>
+ </layer>
+</map>
