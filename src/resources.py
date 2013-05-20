@@ -10,3 +10,4 @@ pyglet.resource.path = ['../resource']
 pyglet.resource.reindex()
 
 tank_image = pyglet.resource.image('up.png')
+bullet_image = pyglet.resource.image('bullet.png')

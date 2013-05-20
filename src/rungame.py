@@ -18,14 +18,14 @@ from cocos.director import director
 
 import resources
 
-class DriveTank(actions.Driver):
-    
-    def step(self, dt):
-        self.target.rotation += (keyboard[key.RIGHT] - keyboard[key.LEFT]) * 150 * dt   
-        self.target.acceleration = (keyboard[key.UP] - keyboard[key.DOWN]) * 400 * dt
-        if keyboard[key.SPACE]: self.target.speed = 0
-        super(DriveTank, self).step(dt)
-        scroller.set_focus(self.target.x, self.target.y)
+#class DriveTank(actions.Driver):
+#    
+#    def step(self, dt):
+#        self.target.rotation += (keyboard[key.RIGHT] - keyboard[key.LEFT]) * 150 * dt   
+#        self.target.acceleration = (keyboard[key.UP] - keyboard[key.DOWN]) * 400 * dt
+#        if keyboard[key.SPACE]: self.target.speed = 0
+#        super(DriveTank, self).step(dt)
+#        scroller.set_focus(self.target.x, self.target.y)
         
 class TankController(actions.Action, tiles.RectMapCollider):
     
@@ -86,16 +86,15 @@ def main():
     tank_map = tiles.load('test_tank.tmx')
     print type(tank_map)
     game_map = tank_map['backgroud']
-    print type(game_map)
     
 #    print tank_map.get_resource('tank_object')
 #    tank_flag = tank_map['tank_object']
 #    scroller.add(tank_flag, z=0)
     
-#    print type(game_map),len(game_map.cells)
-#    print len(game_map.cells[0])
-#    for col in game_map.cells:
-#        print col
+    print type(game_map),len(game_map.cells)
+    print len(game_map.cells[0]),type(game_map.cells)
+#    for cell in game_map.cells:
+#        print cell
     scroller.add(game_map, z=0)
     scroller.add(tank_layer, z=1)
     
@@ -103,8 +102,12 @@ def main():
     print len(game_map.cells)
     start = game_map.cells[21]
     print len(start)
-    start = start[4]
-#    r = tank.get_rect()
+    print type(start[4])
+    # 为了不让RectCell显示，可以使其tile为None，这样就可以不加载tile图片到窗口中
+    start[3].tile = None 
+    start = start[3]
+    print game_map.is_visible(start)
+    r = tank.get_rect()
 
     # align the mid bottom of the player with the mid bottom of the start cell
 #    r.midbottom = start.midbottom
